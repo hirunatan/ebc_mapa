@@ -1,0 +1,32 @@
+{% extends "ecgdir/base.html" %}
+
+{% block bootstrap3_content %}
+  <div class="container">
+    <h1>Organizaciones del Bien Común</h1>
+    {% if organizations %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Provincia</th>
+            <th>Campo de energía</th>
+            <th>Semilla EBC</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for organization in organizations %}
+            <tr>
+              <td><a href="{% url 'detail' organization.id %}">{{ organization.name }}</a></li>
+              <td>{{ organization.province }}</td>
+              <td>{{ organization.ecg_field }}</td>
+              <td>{{ organization.ecg_seed }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No hay ninguna organización todavía.</p>
+    {% endif %}
+  </div>
+{% endblock %}
+

@@ -1,0 +1,134 @@
+{% extends "ecgdir/base.html" %}
+
+{% block bootstrap3_content %}
+  <div class="container">
+    <p><a href="{% url 'index' %}">&lt;&lt; Volver</a></p>
+    <h1>{{ organization.name }}</h1>
+    <p>
+      {% if organization.registered_name %}
+        <strong>Nombre comercial</strong>: {{ organization.registered_name }}<br />
+      {% endif %}
+      {% if organization.cif_nif %}
+        <strong>CIF / NIF</strong>: {{ organization.cif_nif }}<br />
+      {% endif %}
+      {% if organization.address or organization.province %}
+        <strong>Dirección</strong>: {{ organization.address }} {{ organization.province }}<br />
+      {% endif %}
+    </p>
+    <p>
+      {% if organization.economic_sector %}
+        <strong>Sector económico</strong>: {{ organization.economic_sector }}<br />
+      {% endif %}
+      {% if organization.legal_form %}
+        <strong>Forma jurídica</strong>:
+        {{ organization.legal_form }}
+        {% if organization.legal_form_other %} ({{ organization.legal_form_other }}){% endif %}
+        <br />
+      {% endif %}
+      {% if organization.number_of_employees %}
+        <strong>Nº empleados</strong>: {{ organization.number_of_employees }}<br />
+      {% endif %}
+      {% if organization.turnover %}
+        <strong>Facturación</strong>: {{ organization.turnover }}<br />
+      {% endif %}
+    </p>
+    <p>
+      {% if organization.contact_person %}
+        <strong>Persona de contacto</strong>: {{ organization.contact_person }}<br />
+      {% endif %}
+      {% if organization.contact_email %}
+        <strong>Email</strong>: {{ organization.contact_email }}<br />
+      {% endif %}
+      {% if organization.contact_phone %}
+        <strong>Teléfono</strong>: {{ organization.contact_phone }}<br />
+      {% endif %}
+    </p>
+    <p>
+      {% if organization.ecg_link_person %}
+        <strong>Contacto en la EBC</strong>: {{ organization.ecg_link_person }}<br />
+      {% endif %}
+      {% if organization.ecg_field %}
+        <strong>Campo de energía</strong>: {{ organization.ecg_field }}<br />
+      {% endif %}
+      {% if organization.ecg_seed %}
+        <strong>Semilla EBC</strong>: {{ organization.ecg_seed }}<br />
+      {% endif %}
+    </p>
+    <p>
+      {% if organization.balance_date %}
+        <strong>Fecha del balance</strong>: {{ organization.balance_date }}<br />
+      {% endif %}
+      {% if organization.balance_version %}
+        <strong>Versión utilizada de la matriz</strong>:
+        {{ organization.balance_version }}
+        {% if organization.balance_version_other %} ({{ organization.balance_version_other }}){% endif %}
+        <br />
+      {% endif %}
+      {% if organization.global_score %}
+        <strong>Puntuación global</strong>: {{ organization.global_score }}<br />
+      {% endif %}
+      {% if organization.consultant %}
+        <strong>Consultor</strong>: {{ organization.consultant }}<br />
+      {% endif %}
+      {% if organization.auditor %}
+        <strong>Auditor</strong>: {{ organization.auditor }}<br />
+      {% endif %}
+      {% if organization.evaluation %}
+        <strong>Evaluación</strong>: <br />
+        {{ organization.evaluation }}<br />
+      {% endif %}
+    </p>
+
+    {% if organization.score_a1 %}
+      <p><strong>Matriz del Bien Común</strong></p>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th width="16.67%">&nbsp;</th>
+              <th width="16.66%">Dignidad humana</th>
+              <th width="16.66%">Solidaridad</th>
+              <th width="16.66%">Sostenibilidad ecológica</th>
+              <th width="16.66%">Justicia social</th>
+              <th width="16.66%">Participación democrática y transparencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>A) Proveedores</th>
+              <td colspan="5">A1: {{ organization.score_a1 }}</td>
+            </tr>
+            <tr>
+              <th>B) Financiadores</th>
+              <td colspan="5">B1: {{ organization.score_b1 }}</td>
+            </tr>
+            <tr>
+              <th>C) Empleados (inclusive propietarios)</th>
+              <td>C1: {{ organization.score_c1 }}</td>
+              <td>C2: {{ organization.score_c2 }}</td>
+              <td>C3: {{ organization.score_c3 }}</td>
+              <td>C4: {{ organization.score_c4 }}</td>
+              <td>C5: {{ organization.score_c5 }}</td>
+            </tr>
+            <tr>
+              <th>D) Clientes / productos / servicios / co-empresas</th>
+              <td>D1: {{ organization.score_d1 }}</td>
+              <td>D2: {{ organization.score_d2 }}</td>
+              <td>D3: {{ organization.score_d3 }}</td>
+              <td>D4: {{ organization.score_d4 }}</td>
+              <td>D5: {{ organization.score_d5 }}</td>
+            </tr>
+            <tr>
+              <th>E) Ámbito social</th>
+              <td>E1: {{ organization.score_e1 }}</td>
+              <td>E2: {{ organization.score_e2 }}</td>
+              <td>E3: {{ organization.score_e3 }}</td>
+              <td>E4: {{ organization.score_e4 }}</td>
+              <td>E5: {{ organization.score_e5 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
