@@ -17,7 +17,8 @@
         {{ organization.address_other }}
         {{ organization.zipco }}
         {{ organization.city }}
-        {{ organization.province }}<br />
+        {% if organization.province %}({{ organization.province }}){% endif %}
+        <br />
       {% endif %}
     </p>
     <p>
