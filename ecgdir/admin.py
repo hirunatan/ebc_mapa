@@ -9,9 +9,9 @@ class OrganizationAdmin(admin.ModelAdmin):
         (
             "Datos generales", {
                 "fields": [
-                    "name", "registered_name", "cif_nif", "address", "province",
-                    "economic_sector", "legal_form", "legal_form_other",
-                    "number_of_employees", "turnover",
+                    "is_active", "name", "registered_name", "cif_nif", "economic_sector",
+                    "legal_form", "legal_form_other", "number_of_employees",
+                    "turnover",
                 ]
             }
         ),
@@ -19,7 +19,8 @@ class OrganizationAdmin(admin.ModelAdmin):
             "Contacto", {
                 "classes": ("collapse",),
                 "fields": [
-                    "contact_person", "contact_email", "contact_phone",
+                    "address_street_number", "address_other", "zipcode", "city",
+                    "province", "contact_person", "contact_email", "contact_phone",
                 ]
             }
         ),

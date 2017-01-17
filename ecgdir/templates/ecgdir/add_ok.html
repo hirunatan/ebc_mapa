@@ -1,0 +1,10 @@
+{% extends "ecgdir/base.html" %}
+{% load widget_tweaks %}
+
+{% block bootstrap3_content %}
+  <div class="container">
+    <p><a href="{% url 'index' %}">&lt;&lt; Volver</a></p>
+    <h1>Tus datos se han enviado con éxito</h1>
+    <p>En cuanto podamos los revisaremos y los añadiremos al listado. ¡Muchas gracias!</p>
+  </div>
+{% endblock %}

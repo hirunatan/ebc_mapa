@@ -1,9 +1,26 @@
 from django.db import models
 
-from cities.models import Subregion
+from cities.models import Subregion, City
+
+
+# Alternatives to django-cities for the address
+# https://code.activestate.com/pypm/django-postal
+# https://github.com/scaleway/postal-address
+# https://github.com/furious-luke/django-address
+# https://github.com/openvenues/libpostal
+# http://django-autocomplete-light.readthedocs.io/en/master/
+
+
+class OrganizationsManager(models.Manager):
+    def active(self):
+        return self.filter(is_active=True)
 
 
 class Organization(models.Model):
+    is_active = models.BooleanField(
+        null = False, blank = True, default = False,
+        verbose_name = "activa"
+    )
     name = models.CharField(
         null = False, blank = False, max_length = 50,
         verbose_name = "nombre"
@@ -16,9 +33,21 @@ class Organization(models.Model):
         null = False, blank = True, max_length = 10,
         verbose_name = "cif/nif"
     )
-    address = models.CharField(
+    address_street_number = models.CharField(
         null = False, blank = True, max_length = 100,
-        verbose_name = "dirección"
+        verbose_name = "calle y número"
+    )
+    address_other = models.CharField(
+        null = False, blank = True, max_length = 100,
+        verbose_name = "portal / piso / puerta"
+    )
+    zipcode = models.CharField(
+        null = False, blank = True, max_length = 100,
+        verbose_name = "código postal"
+    )
+    city = models.CharField(
+        null = False, blank = True, max_length = 100,
+        verbose_name = "población"
     )
     province = models.ForeignKey(
         Subregion,
@@ -35,12 +64,13 @@ class Organization(models.Model):
         null = False, blank = True, max_length = 100,
         verbose_name = "forma jurídica",
         choices = (
-            ("autonomo", "trabajador autónomo"),
-            ("cooperativa", "cooperativa"),
-            ("SL", "sociedad de responsabilidad limitada (S.L.)"),
-            ("comunidad de bienes", "comunidad de bienes"),
-            ("SA", "sociedad anónima (S.A.)"),
-            ("SC", "sociedad civil"),
+            ("comunidad de bienes", "Comunidad de bienes"),
+            ("empresario individual", "Empresario individual"),
+            ("sociedad anonima", "Sociedad anónima (S.A.)"),
+            ("sociedad civil", "Sociedad civil"),
+            ("cooperativa", "Sociedad cooperativa"),
+            ("sociedad laboral", "Sociedad laboral"),
+            ("sociedad limitada", "Sociedad limitada (S.L.)"),
             ("otra", "otra"),
         )
     )
@@ -52,13 +82,21 @@ class Organization(models.Model):
         null = False, blank = True, max_length = 20,
         verbose_name = "número de empleados",
         choices = (
-            ("0", "0 (emprendedor-trabajador)"),
-            ("1-3", "1-3"),
-            ("4-10", "4-10"),
-            ("11-25", "10-25"),
-            ("26-50", "26-50"),
+            ("1", "1 (emprendedor-trabajador)"),
+            ("2", "2"),
+            ("3-5", "3-5"),
+            ("6-10", "6-10"),
+            ("11-20", "11-20"),
+            ("21-50", "21-50"),
             ("51-100", "51-100"),
-            ("+100", "+100"),
+            ("101-200", "101-200"),
+            ("201-350", "201-350"),
+            ("351-500", "351-500"),
+            ("501-750", "501-750"),
+            ("751-1000", "751-1000"),
+            ("1001-1500", "1001-1500"),
+            ("1501-2500", "1501-2500"),
+            (">2500", ">2500"),
         )
     )
     turnover = models.PositiveIntegerField(
@@ -69,8 +107,12 @@ class Organization(models.Model):
         null = False, blank = True, max_length = 100,
         verbose_name = "persona de contacto"
     )
-    contact_email = models.EmailField(
+    website = models.URLField(
         null = False, blank = True,
+        verbose_name = "página web"
+    )
+    contact_email = models.EmailField(
+        null = False, blank = False,
         verbose_name = "email de contacto"
     )
     contact_phone = models.CharField(
@@ -103,10 +145,11 @@ class Organization(models.Model):
         null = False, blank = True, max_length = 20,
         verbose_name = "versión utilizada de la matriz",
         choices = (
+            ("4.0", "4.0"),
             ("4.1", "4.1"),
+            ("5.0", "5.0"),
             ("Rubi-Brilla (RB)-Zaragoza", "Rubi-Brilla (RB)-Zaragoza"),
             ("Versiones anteriores", "Versiones anteriores"),
-            ("5.0", "5.0"),
             ("otra", "otra"),
         )
     )
@@ -198,6 +241,8 @@ class Organization(models.Model):
         null = True, blank = True,
         verbose_name = "puntuación E5"
     )
+
+    objects = OrganizationsManager()
 
     class Meta:
         verbose_name = "Organización"

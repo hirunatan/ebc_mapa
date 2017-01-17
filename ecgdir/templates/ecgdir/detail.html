@@ -11,8 +11,13 @@
       {% if organization.cif_nif %}
         <strong>CIF / NIF</strong>: {{ organization.cif_nif }}<br />
       {% endif %}
-      {% if organization.address or organization.province %}
-        <strong>Dirección</strong>: {{ organization.address }} {{ organization.province }}<br />
+      {% if organization.address_street_number or organization.province %}
+        <strong>Dirección</strong>:
+        {{ organization.address_street_number }}
+        {{ organization.address_other }}
+        {{ organization.zipco }}
+        {{ organization.city }}
+        {{ organization.province }}<br />
       {% endif %}
     </p>
     <p>

@@ -5,6 +5,8 @@
   <div class="container">
     <p><a href="{% url 'index' %}">&lt;&lt; Volver</a></p>
     <h1>Añadir una nueva organización</h1>
+    <p>Si nos envías tus datos, los revisaremos e incluiremos tu organización en el listado.</p>
+    <p><em>Los campos con (*) son obligatorios.</em></p>
 
     <form action="" method="POST">
         {% csrf_token %}
@@ -17,7 +19,7 @@
         <div class="collapse in" id="generalBlock">
             <div class="form-horizontal">
                 <div class="form-group">
-                    <label for="{{ form.name.id_for_label }}" class="col-sm-2 control-label">{{ form.name.label }}</label>
+                    <label for="{{ form.name.id_for_label }}" class="col-sm-2 control-label">{{ form.name.label }} (*)</label>
                     <div class="col-sm-10">
                         {% render_field form.name class+="form-control" %}
                     </div>
@@ -32,18 +34,6 @@
                     <label for="{{ form.cif_nif.id_for_label }}" class="col-sm-2 control-label">{{ form.cif_nif.label }}</label>
                     <div class="col-sm-10">
                         {% render_field form.cif_nif class+="form-control" %}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.address.id_for_label }}" class="col-sm-2 control-label">{{ form.address.label }}</label>
-                    <div class="col-sm-10">
-                        {% render_field form.address class+="form-control" %}
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.province.id_for_label }}" class="col-sm-2 control-label">{{ form.province.label }}</label>
-                    <div class="col-sm-10">
-                        {% render_field form.province class+="form-control" %}
                     </div>
                 </div>
                 <div class="form-group">
@@ -87,13 +77,43 @@
         <div class="collapse" id="contactBlock">
             <div class="form-horizontal">
                 <div class="form-group">
+                    <label for="{{ form.address_street_number.id_for_label }}" class="col-sm-2 control-label">{{ form.address_street_number.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.address_street_number class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.address_other.id_for_label }}" class="col-sm-2 control-label">{{ form.address_other.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.address_other class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.city.id_for_label }}" class="col-sm-2 control-label">{{ form.city.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.city class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.zipcode.id_for_label }}" class="col-sm-2 control-label">{{ form.zipcode.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.zipcode class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.province.id_for_label }}" class="col-sm-2 control-label">{{ form.province.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.province class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="{{ form.contact_person.id_for_label }}" class="col-sm-2 control-label">{{ form.contact_person.label }}</label>
                     <div class="col-sm-10">
                         {% render_field form.contact_person class+="form-control" %}
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="{{ form.contact_email.id_for_label }}" class="col-sm-2 control-label">{{ form.contact_email.label }}</label>
+                    <label for="{{ form.contact_email.id_for_label }}" class="col-sm-2 control-label">{{ form.contact_email.label }} (*)</label>
                     <div class="col-sm-10">
                         {% render_field form.contact_email class+="form-control" %}
                     </div>
@@ -127,7 +147,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="{{ form.ecg_seed.id_for_label }}" class="col-sm-2 control-label">{{ form.ecg_seed.label }}</label>
+                    <label for="{{ form.ecg_seed.id_for_label }}" class="col-sm-2 control-label">{{ form.ecg_seed.label }} (*)</label>
                     <div class="col-sm-10">
                         {% render_field form.ecg_seed class+="form-control" %}
                     </div>
@@ -183,6 +203,7 @@
             </button>
         </p>
         <div class="collapse" id="ecgMatrixBlock">
+            <p><strong>Introduce las puntuaciones de cada uno de los indicadores de tu matriz</strong></p>
             <table class="table">
                 <thead>
                     <tr>
@@ -197,7 +218,7 @@
                 <tbody>
                     <tr>
                         <th>A</th>
-                        <td colspan="5">
+                        <td>
                             <div class="form-group">
                                 <label for="{{ form.score_a1.id_for_label }}" class="control-label sr-only">{{ form.score_a1.label }}</label>
                                 {% render_field form.score_a1 class+="form-control" %}
@@ -206,7 +227,7 @@
                     </tr>
                     <tr>
                         <th>B</th>
-                        <td colspan="5">
+                        <td>
                             <div class="form-group">
                                 <label for="{{ form.score_b1.id_for_label }}" class="control-label sr-only">{{ form.score_b1.label }}</label>
                                 {% render_field form.score_b1 class+="form-control" %}
