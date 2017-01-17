@@ -1,0 +1,292 @@
+{% extends "ecgdir/base.html" %}
+{% load widget_tweaks %}
+
+{% block bootstrap3_content %}
+  <div class="container">
+    <p><a href="{% url 'index' %}">&lt;&lt; Volver</a></p>
+    <h1>Añadir una nueva organización</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#generalBlock"
+                aria-expanded="true" aria-controls="generalBlock">
+                Datos generales
+            </button>
+        </p>
+        <div class="collapse in" id="generalBlock">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}" class="col-sm-2 control-label">{{ form.name.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.name class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.registered_name.id_for_label }}" class="col-sm-2 control-label">{{ form.registered_name.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.registered_name class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.cif_nif.id_for_label }}" class="col-sm-2 control-label">{{ form.cif_nif.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.cif_nif class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.address.id_for_label }}" class="col-sm-2 control-label">{{ form.address.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.address class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.province.id_for_label }}" class="col-sm-2 control-label">{{ form.province.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.province class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.economic_sector.id_for_label }}" class="col-sm-2 control-label">{{ form.economic_sector.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.economic_sector class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.legal_form.id_for_label }}" class="col-sm-2 control-label">{{ form.legal_form.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.legal_form class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.legal_form_other.id_for_label }}" class="col-sm-2 control-label">{{ form.legal_form_other.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.legal_form_other class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.number_of_employees.id_for_label }}" class="col-sm-2 control-label">{{ form.number_of_employees.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.number_of_employees class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.turnover.id_for_label }}" class="col-sm-2 control-label">{{ form.turnover.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.turnover class+="form-control" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#contactBlock"
+                aria-expanded="true" aria-controls="contactBlock">
+                Contacto
+            </button>
+        </p>
+        <div class="collapse" id="contactBlock">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="{{ form.contact_person.id_for_label }}" class="col-sm-2 control-label">{{ form.contact_person.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.contact_person class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.contact_email.id_for_label }}" class="col-sm-2 control-label">{{ form.contact_email.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.contact_email class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.contact_phone.id_for_label }}" class="col-sm-2 control-label">{{ form.contact_phone.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.contact_phone class+="form-control" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ecgDataBlock"
+                aria-expanded="true" aria-controls="ecgDataBlock">
+                Datos EBC
+            </button>
+        </p>
+        <div class="collapse" id="ecgDataBlock">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="{{ form.ecg_link_person.id_for_label }}" class="col-sm-2 control-label">{{ form.ecg_link_person.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.ecg_link_person class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.ecg_field.id_for_label }}" class="col-sm-2 control-label">{{ form.ecg_field.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.ecg_field class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.ecg_seed.id_for_label }}" class="col-sm-2 control-label">{{ form.ecg_seed.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.ecg_seed class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.balance_date.id_for_label }}" class="col-sm-2 control-label">{{ form.balance_date.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.balance_date class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.balance_version.id_for_label }}" class="col-sm-2 control-label">{{ form.balance_version.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.balance_version class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.balance_version_other.id_for_label }}" class="col-sm-2 control-label">{{ form.balance_version_other.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.balance_version_other class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.global_score.id_for_label }}" class="col-sm-2 control-label">{{ form.global_score.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.global_score class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.consultant.id_for_label }}" class="col-sm-2 control-label">{{ form.consultant.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.consultant class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.auditor.id_for_label }}" class="col-sm-2 control-label">{{ form.auditor.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.auditor class+="form-control" %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.evaluation.id_for_label }}" class="col-sm-2 control-label">{{ form.evaluation.label }}</label>
+                    <div class="col-sm-10">
+                        {% render_field form.evaluation class+="form-control" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ecgMatrixBlock"
+                aria-expanded="true" aria-controls="ecgMatrixBlock">
+                Matriz EBC
+            </button>
+        </p>
+        <div class="collapse" id="ecgMatrixBlock">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>A</th>
+                        <td colspan="5">
+                            <div class="form-group">
+                                <label for="{{ form.score_a1.id_for_label }}" class="control-label sr-only">{{ form.score_a1.label }}</label>
+                                {% render_field form.score_a1 class+="form-control" %}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>B</th>
+                        <td colspan="5">
+                            <div class="form-group">
+                                <label for="{{ form.score_b1.id_for_label }}" class="control-label sr-only">{{ form.score_b1.label }}</label>
+                                {% render_field form.score_b1 class+="form-control" %}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>C</th>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_c1.id_for_label }}" class="control-label sr-only">{{ form.score_c1.label }}</label>
+                                {% render_field form.score_c1 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_c2.id_for_label }}" class="control-label sr-only">{{ form.score_c2.label }}</label>
+                                {% render_field form.score_c2 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_c3.id_for_label }}" class="control-label sr-only">{{ form.score_c3.label }}</label>
+                                {% render_field form.score_c3 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_c4.id_for_label }}" class="control-label sr-only">{{ form.score_c4.label }}</label>
+                                {% render_field form.score_c4 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_c5.id_for_label }}" class="control-label sr-only">{{ form.score_c5.label }}</label>
+                                {% render_field form.score_c5 class+="form-control" %}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>D</th>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_d1.id_for_label }}" class="control-label sr-only">{{ form.score_d1.label }}</label>
+                                {% render_field form.score_d1 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_d2.id_for_label }}" class="control-label sr-only">{{ form.score_d2.label }}</label>
+                                {% render_field form.score_d2 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_d3.id_for_label }}" class="control-label sr-only">{{ form.score_d3.label }}</label>
+                                {% render_field form.score_d3 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_d4.id_for_label }}" class="control-label sr-only">{{ form.score_d4.label }}</label>
+                                {% render_field form.score_d4 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_d5.id_for_label }}" class="control-label sr-only">{{ form.score_d5.label }}</label>
+                                {% render_field form.score_d5 class+="form-control" %}
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            <input type="submit" value="Enviar" />
+        </p>
+    </form>
+
+  </div>
+{% endblock %}
+

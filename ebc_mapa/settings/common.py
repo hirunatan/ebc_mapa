@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.gis",
+    "widget_tweaks",
     "graphene_django",
     "bootstrap3",
     "cities",
