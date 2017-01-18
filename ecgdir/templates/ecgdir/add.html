@@ -204,6 +204,7 @@
         </p>
         <div class="collapse" id="ecgMatrixBlock">
             <p><strong>Introduce las puntuaciones de cada uno de los indicadores de tu matriz</strong></p>
+            <p>(rellena sólo las casillas que existan en la versión que has utilizado del balance)</p>
             <table class="table">
                 <thead>
                     <tr>
@@ -224,6 +225,30 @@
                                 {% render_field form.score_a1 class+="form-control" %}
                             </div>
                         </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_a2.id_for_label }}" class="control-label sr-only">{{ form.score_a2.label }}</label>
+                                {% render_field form.score_a2 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_a3.id_for_label }}" class="control-label sr-only">{{ form.score_a3.label }}</label>
+                                {% render_field form.score_a3 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_a4.id_for_label }}" class="control-label sr-only">{{ form.score_a4.label }}</label>
+                                {% render_field form.score_a4 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_a5.id_for_label }}" class="control-label sr-only">{{ form.score_a5.label }}</label>
+                                {% render_field form.score_a5 class+="form-control" %}
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <th>B</th>
@@ -231,6 +256,30 @@
                             <div class="form-group">
                                 <label for="{{ form.score_b1.id_for_label }}" class="control-label sr-only">{{ form.score_b1.label }}</label>
                                 {% render_field form.score_b1 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_b2.id_for_label }}" class="control-label sr-only">{{ form.score_b2.label }}</label>
+                                {% render_field form.score_b2 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_b3.id_for_label }}" class="control-label sr-only">{{ form.score_b3.label }}</label>
+                                {% render_field form.score_b3 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_b4.id_for_label }}" class="control-label sr-only">{{ form.score_b4.label }}</label>
+                                {% render_field form.score_b4 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_b5.id_for_label }}" class="control-label sr-only">{{ form.score_b5.label }}</label>
+                                {% render_field form.score_b5 class+="form-control" %}
                             </div>
                         </td>
                     </tr>
@@ -297,6 +346,120 @@
                             <div class="form-group">
                                 <label for="{{ form.score_d5.id_for_label }}" class="control-label sr-only">{{ form.score_d5.label }}</label>
                                 {% render_field form.score_d5 class+="form-control" %}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>E</th>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_e1.id_for_label }}" class="control-label sr-only">{{ form.score_e1.label }}</label>
+                                {% render_field form.score_e1 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_e2.id_for_label }}" class="control-label sr-only">{{ form.score_e2.label }}</label>
+                                {% render_field form.score_e2 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_e3.id_for_label }}" class="control-label sr-only">{{ form.score_e3.label }}</label>
+                                {% render_field form.score_e3 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_e4.id_for_label }}" class="control-label sr-only">{{ form.score_e4.label }}</label>
+                                {% render_field form.score_e4 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_e5.id_for_label }}" class="control-label sr-only">{{ form.score_e5.label }}</label>
+                                {% render_field form.score_e5 class+="form-control" %}
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>N</th>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_n1.id_for_label }}" class="control-label sr-only">{{ form.score_n1.label }}</label>
+                                {% render_field form.score_n1 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n2.id_for_label }}" class="control-label sr-only">{{ form.score_n2.label }}</label>
+                                {% render_field form.score_n2 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n3.id_for_label }}" class="control-label sr-only">{{ form.score_n3.label }}</label>
+                                {% render_field form.score_n3 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_n4.id_for_label }}" class="control-label sr-only">{{ form.score_n4.label }}</label>
+                                {% render_field form.score_n4 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n5.id_for_label }}" class="control-label sr-only">{{ form.score_n5.label }}</label>
+                                {% render_field form.score_n5 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n6.id_for_label }}" class="control-label sr-only">{{ form.score_n6.label }}</label>
+                                {% render_field form.score_n6 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_n7.id_for_label }}" class="control-label sr-only">{{ form.score_n7.label }}</label>
+                                {% render_field form.score_n7 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n8.id_for_label }}" class="control-label sr-only">{{ form.score_n8.label }}</label>
+                                {% render_field form.score_n8 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n9.id_for_label }}" class="control-label sr-only">{{ form.score_n9.label }}</label>
+                                {% render_field form.score_n9 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_n10.id_for_label }}" class="control-label sr-only">{{ form.score_n10.label }}</label>
+                                {% render_field form.score_n10 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n11.id_for_label }}" class="control-label sr-only">{{ form.score_n11.label }}</label>
+                                {% render_field form.score_n11 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n12.id_for_label }}" class="control-label sr-only">{{ form.score_n12.label }}</label>
+                                {% render_field form.score_n12 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n13.id_for_label }}" class="control-label sr-only">{{ form.score_n13.label }}</label>
+                                {% render_field form.score_n13 class+="form-control" %}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label for="{{ form.score_n14.id_for_label }}" class="control-label sr-only">{{ form.score_n14.label }}</label>
+                                {% render_field form.score_n14 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n15.id_for_label }}" class="control-label sr-only">{{ form.score_n15.label }}</label>
+                                {% render_field form.score_n15 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n16.id_for_label }}" class="control-label sr-only">{{ form.score_n16.label }}</label>
+                                {% render_field form.score_n16 class+="form-control" %}
+                            </div>
+                            <div class="form-group">
+                                <label for="{{ form.score_n17.id_for_label }}" class="control-label sr-only">{{ form.score_n17.label }}</label>
+                                {% render_field form.score_n17 class+="form-control" %}
                             </div>
                         </td>
                     </tr>

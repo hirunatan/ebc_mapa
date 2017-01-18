@@ -85,7 +85,7 @@
       {% endif %}
     </p>
 
-    {% if organization.score_a1 %}
+    {% if organization.score_a1 != None %}
       <p><strong>Matriz del Bien Común</strong></p>
       <div class="table-responsive">
         <table class="table table-bordered">
@@ -102,35 +102,73 @@
           <tbody>
             <tr>
               <th>A) Proveedores</th>
-              <td colspan="5">A1: {{ organization.score_a1 }}</td>
+              <td>{% if organization.score_a1 != None %}A1: {{ organization.score_a1 }}{% endif %}</td>
+              <td>{% if organization.score_a2 != None %}A2: {{ organization.score_a2 }}{% endif %}</td>
+              <td>{% if organization.score_a3 != None %}A3: {{ organization.score_a3 }}{% endif %}</td>
+              <td>{% if organization.score_a4 != None %}A4: {{ organization.score_a4 }}{% endif %}</td>
+              <td>{% if organization.score_a5 != None %}A5: {{ organization.score_a5 }}{% endif %}</td>
             </tr>
             <tr>
               <th>B) Financiadores</th>
-              <td colspan="5">B1: {{ organization.score_b1 }}</td>
+              <td>{% if organization.score_b1 != None %}B1: {{ organization.score_b1 }}{% endif %}</td>
+              <td>{% if organization.score_b2 != None %}B2: {{ organization.score_b2 }}{% endif %}</td>
+              <td>{% if organization.score_b3 != None %}B3: {{ organization.score_b3 }}{% endif %}</td>
+              <td>{% if organization.score_b4 != None %}B4: {{ organization.score_b4 }}{% endif %}</td>
+              <td>{% if organization.score_b5 != None %}B5: {{ organization.score_b5 }}{% endif %}</td>
             </tr>
             <tr>
               <th>C) Empleados (inclusive propietarios)</th>
-              <td>C1: {{ organization.score_c1 }}</td>
-              <td>C2: {{ organization.score_c2 }}</td>
-              <td>C3: {{ organization.score_c3 }}</td>
-              <td>C4: {{ organization.score_c4 }}</td>
-              <td>C5: {{ organization.score_c5 }}</td>
+              <td>{% if organization.score_c1 != None %}C1: {{ organization.score_c1 }}{% endif %}</td>
+              <td>{% if organization.score_c2 != None %}C2: {{ organization.score_c2 }}{% endif %}</td>
+              <td>{% if organization.score_c3 != None %}C3: {{ organization.score_c3 }}{% endif %}</td>
+              <td>{% if organization.score_c4 != None %}C4: {{ organization.score_c4 }}{% endif %}</td>
+              <td>{% if organization.score_c5 != None %}C5: {{ organization.score_c5 }}{% endif %}</td>
             </tr>
             <tr>
               <th>D) Clientes / productos / servicios / co-empresas</th>
-              <td>D1: {{ organization.score_d1 }}</td>
-              <td>D2: {{ organization.score_d2 }}</td>
-              <td>D3: {{ organization.score_d3 }}</td>
-              <td>D4: {{ organization.score_d4 }}</td>
-              <td>D5: {{ organization.score_d5 }}</td>
+              <td>{% if organization.score_d1 != None %}D1: {{ organization.score_d1 }}{% endif %}</td>
+              <td>{% if organization.score_d2 != None %}D2: {{ organization.score_d2 }}{% endif %}</td>
+              <td>{% if organization.score_d3 != None %}D3: {{ organization.score_d3 }}{% endif %}</td>
+              <td>{% if organization.score_d4 != None %}D4: {{ organization.score_d4 }}{% endif %}</td>
+              <td>{% if organization.score_d5 != None %}D5: {{ organization.score_d5 }}{% endif %}</td>
             </tr>
             <tr>
               <th>E) Ámbito social</th>
-              <td>E1: {{ organization.score_e1 }}</td>
-              <td>E2: {{ organization.score_e2 }}</td>
-              <td>E3: {{ organization.score_e3 }}</td>
-              <td>E4: {{ organization.score_e4 }}</td>
-              <td>E5: {{ organization.score_e5 }}</td>
+              <td>{% if organization.score_e1 != None %}E1: {{ organization.score_e1 }}{% endif %}</td>
+              <td>{% if organization.score_e2 != None %}E2: {{ organization.score_e2 }}{% endif %}</td>
+              <td>{% if organization.score_e3 != None %}E3: {{ organization.score_e3 }}{% endif %}</td>
+              <td>{% if organization.score_e4 != None %}E4: {{ organization.score_e4 }}{% endif %}</td>
+              <td>{% if organization.score_e5 != None %}E5: {{ organization.score_e5 }}{% endif %}</td>
+            </tr>
+            <tr>
+              <th>N) Criterios negativos</th>
+              <td>
+                  {% if organization.score_n1 != None %}N1: {{ organization.score_n1 }}{% endif %}<br />
+                  {% if organization.score_n2 != None %}N2: {{ organization.score_n2 }}{% endif %}<br />
+                  {% if organization.score_n3 != None %}N3: {{ organization.score_n3 }}{% endif %}
+              </td>
+              <td>
+                  {% if organization.score_n4 != None %}N4: {{ organization.score_n4 }}{% endif %}<br />
+                  {% if organization.score_n5 != None %}N5: {{ organization.score_n5 }}{% endif %}<br />
+                  {% if organization.score_n6 != None %}N6: {{ organization.score_n6 }}{% endif %}
+              </td>
+              <td>
+                  {% if organization.score_n7 != None %}N7: {{ organization.score_n7 }}{% endif %}<br />
+                  {% if organization.score_n8 != None %}N8: {{ organization.score_n8 }}{% endif %}<br />
+                  {% if organization.score_n9 != None %}N9: {{ organization.score_n9 }}{% endif %}
+              </td>
+              <td>
+                  {% if organization.score_n10 != None %}N10: {{ organization.score_n10 }}{% endif %}<br />
+                  {% if organization.score_n11 != None %}N11: {{ organization.score_n11 }}{% endif %}<br />
+                  {% if organization.score_n12 != None %}N12: {{ organization.score_n12 }}{% endif %}<br />
+                  {% if organization.score_n13 != None %}N13: {{ organization.score_n13 }}{% endif %}
+              </td>
+              <td>
+                  {% if organization.score_n14 != None %}N14: {{ organization.score_n14 }}{% endif %}<br />
+                  {% if organization.score_n15 != None %}N15: {{ organization.score_n15 }}{% endif %}<br />
+                  {% if organization.score_n16 != None %}N16: {{ organization.score_n16 }}{% endif %}<br />
+                  {% if organization.score_n17 != None %}N17: {{ organization.score_n17 }}{% endif %}
+              </td>
             </tr>
           </tbody>
         </table>

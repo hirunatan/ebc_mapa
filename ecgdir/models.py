@@ -177,9 +177,41 @@ class Organization(models.Model):
         null = True, blank = True,
         verbose_name = "puntuación A1"
     )
+    score_a2 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación A2"
+    )
+    score_a3 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación A3"
+    )
+    score_a4 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación A4"
+    )
+    score_a5 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación A5"
+    )
     score_b1 = models.PositiveIntegerField(
         null = True, blank = True,
         verbose_name = "puntuación B1"
+    )
+    score_b2 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación B2"
+    )
+    score_b3 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación B3"
+    )
+    score_b4 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación B4"
+    )
+    score_b5 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación B5"
     )
     score_c1 = models.PositiveIntegerField(
         null = True, blank = True,
@@ -240,6 +272,74 @@ class Organization(models.Model):
     score_e5 = models.PositiveIntegerField(
         null = True, blank = True,
         verbose_name = "puntuación E5"
+    )
+    score_n1 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N1"
+    )
+    score_n2 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N2"
+    )
+    score_n3 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N3"
+    )
+    score_n4 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N4"
+    )
+    score_n5 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N5"
+    )
+    score_n6 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N6"
+    )
+    score_n7 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N7"
+    )
+    score_n8 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N8"
+    )
+    score_n9 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N9"
+    )
+    score_n10 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N10"
+    )
+    score_n11 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N11"
+    )
+    score_n12 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N12"
+    )
+    score_n13 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N13"
+    )
+    score_n14 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N14"
+    )
+    score_n15 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N15"
+    )
+    score_n16 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N16"
+    )
+    score_n17 = models.PositiveIntegerField(
+        null = True, blank = True,
+        verbose_name = "puntuación N17"
     )
 
     objects = OrganizationsManager()
