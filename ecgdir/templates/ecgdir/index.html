@@ -27,6 +27,7 @@
     {% else %}
       <p>No hay ninguna organización todavía.</p>
     {% endif %}
+    <p>Descargar como <a href="{% url 'csv' %}">fichero csv</a>.</p>
     <p>¿No está tu organización? Puedes <a href="{% url 'add' %}">enviarnos tus datos por aquí</a>.</p>
   </div>
 {% endblock %}
